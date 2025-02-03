@@ -43,10 +43,12 @@ const ProductCard = ({ product }: any) => {
 export default function ProductsPage() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [originalProducts, setOriginalProducts] = useState<any[]>([]);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [products, setProducts] = useState<any[]>([]);
     const [searchQuery, setSearchQuery] = useState('');
 
-    const handleChange = (event) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const handleChange = (event: any) => {
         setSearchQuery(event.target.value);
     };
 
