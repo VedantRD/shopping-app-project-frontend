@@ -1,0 +1,18 @@
+.navbar {
+    background-color: $secondary-color;
+    padding: 1rem;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        gap: $nav-gap;
+    }
+
+    li {
+        font-size: 1.2rem;
+    }
+
+    a {
+        color: $primary-color;
+    }
+}
