@@ -45,7 +45,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
             const existing = prevCart.find((item) => item._id === product._id);
             if (existing) {
                 return prevCart.map((item) =>
-                    item._id === product._id ? { ...item, quantity: item.quantity + 1 } : item
+                    item._id === product._id ? { ...item, quantity: item["Variant Inventory Qty"] || 0 + 1 } : item
                 );
             }
             return [...prevCart, { ...product, quantity: 1 }];
