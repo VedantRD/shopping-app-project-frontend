@@ -64,8 +64,10 @@ export default function ProductsPage() {
         setProducts(newProducts);
     }, [searchQuery, originalProducts]);
 
+    const API_URL = process.env.API_URL
+
     useEffect(() => {
-        axios.get("http://localhost:5000/products")
+        axios.get(`${API_URL}/products`)
             .then((res) => {
                 setProducts(res.data.products);
                 setOriginalProducts(res.data.products);

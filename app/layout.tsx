@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import "../styles/globals.scss"; // Import the global styles
 
 export default function Layout({ children }: { children: ReactNode }) {
+  console.log('Current NODE_ENV:', process.env.NODE_ENV);
+  console.log('Current API_URL:', process.env.API_URL);
   return (
     <>
       <html>
