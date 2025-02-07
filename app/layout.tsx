@@ -12,10 +12,12 @@ export default function Layout({ children }: { children: ReactNode }) {
       <html>
         <body className="flex flex-col">
           <CartProvider>
-            <header className="grow-0">
-              <Navbar />
-            </header>
-            <div className="grow">{children}</div>
+            {/* <header className="grow-0"> */}
+            <Navbar />
+            {/* </header> */}
+            <div className="app-content">
+              {children}
+            </div>
             {/* <div className="grow-0">
               <Footer />
             </div> */}

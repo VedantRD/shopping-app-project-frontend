@@ -32,7 +32,7 @@ const ProductCard = ({ product, deleteProduct }: ProductCardProps) => {
     const { addToCart } = useCart();
 
     return (
-        <li key={product._id} className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 border border-gray-200 w-64 h-96 m-4 flex flex-col justify-between">
+        <li key={product._id} className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 border border-gray-200 w-64 h-96 m-4 flex flex-col justify-between">
             <div className="p-4 flex flex-col items-center flex-grow">
                 <Image
                     src={product["Image Src"] || altImageSrc}
@@ -131,8 +131,8 @@ export default function ProductsPage() {
         :
         (
             <div className='h-full'>
-                <div className='max-w-md mx-auto my-2'>
-                    <div className="relative flex items-center w-full h-12 rounded-lg shadow-lg bg-white overflow-hidden">
+                <div className='max-w-md mx-auto my-2 mt-4'>
+                    <div className="relative flex items-center w-full h-12 rounded-lg shadow-md bg-white overflow-hidden border border-gray-200">
                         <div className="grid place-items-center h-full w-12 text-gray-300">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
