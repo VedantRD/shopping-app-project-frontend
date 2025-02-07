@@ -3,18 +3,18 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 // Define product type
-interface Product {
+interface CartProduct {
     _id: string;
     Title: string;
     "Image Src": string;
     "Variant Price"?: string;
-    "Variant Inventory Qty"?: string;
+    quantity?: number;
 }
 
 // Cart context type
 interface CartContextType {
-    cart: Product[];
-    addToCart: (product: Product) => void;
+    cart: CartProduct[];
+    addToCart: (product: CartProduct) => void;
     removeFromCart: (_id: string) => void;
     updateQuantity: (_id: string, quantity: number) => void;
     clearCart: () => void;
@@ -24,7 +24,7 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-    const [cart, setCart] = useState<Product[]>([]);
+    const [cart, setCart] = useState<CartProduct[]>([]);
 
     // Load cart from localStorage on mount
     useEffect(() => {
@@ -40,12 +40,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }, [cart]);
 
     // Add product to cart
-    const addToCart = (product: Product) => {
+    const addToCart = (product: CartProduct) => {
         setCart((prevCart) => {
             const existing = prevCart.find((item) => item._id === product._id);
             if (existing) {
                 return prevCart.map((item) =>
-                    item._id === product._id ? { ...item, quantity: item["Variant Inventory Qty"] || 0 + 1 } : item
+                    item._id === product._id ? { ...item, quantity: item.quantity || 0 + 1 } : item
                 );
             }
             return [...prevCart, { ...product, quantity: 1 }];
