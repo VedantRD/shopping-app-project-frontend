@@ -1,9 +1,6 @@
-import React from 'react'
+import { redirect } from "next/navigation";
 
-const Home = () => {
-    return (
-        <div className='h-full justify-center content-center text-center'>Home</div>
-    )
+export default function Home() {
+    redirect("/products"); // Automatically redirects to /products
+    return null; // No need to render anything
 }
-
-export default Home
